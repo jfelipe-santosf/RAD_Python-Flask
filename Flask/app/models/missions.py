@@ -1,6 +1,5 @@
 from app import db
 from datetime import datetime
-from sqlalchemy import text
 
 class Missions(db.Model):
     __tablename__ = 'missions'
@@ -30,7 +29,7 @@ class Missions(db.Model):
     def list_all(self):
         try:
             missions = db.session.query(Missions).all()
-            missions_dict = [{'id': mission.id, 'name': mission.name, "date": mission.release_date.strftime('%d %m %Y'), 'destination': mission.destination, 'mission_state': mission.mission_state} for mission in missions]
+            missions_dict = [{'id': mission.id, 'name': mission.name, "release_date": mission.release_date.strftime('%d %m %Y'), 'destination': mission.destination, 'mission_state': mission.mission_state} for mission in missions]
             return missions_dict
         except Exception as e:
             print(e)
@@ -55,8 +54,8 @@ class Missions(db.Model):
 
     def save_mission(self, name, release_date, destination, mission_state, crew, payload, mission_duration, mission_cost, description):
         try:
-            save_date = datetime.strptime(date, '%d %m %Y').date()
-            add_banco = Missions(name, release_date, destination, mission_state, crew, payload, mission_duration, mission_cost, description)
+            save_date = datetime.strptime(release_date, '%d %m %Y').date()
+            add_banco = Missions(name, save_date, destination, mission_state, crew, payload, mission_duration, mission_cost, description)
             db.session.add(add_banco)
             db.session.commit()
         except Exception as e:
