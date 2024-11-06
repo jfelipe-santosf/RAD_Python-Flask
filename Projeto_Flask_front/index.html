@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="conteiner">
-        <div>
+        <div class="conteinerTable">
             <table border="1">
                 <thead>
                     <tr>
@@ -25,8 +25,20 @@
                 </tbody>
             </table>
         </div>
-        <input type="text">
-        
+        <div id="conteinerLower">
+            <div id="conteinerSearchId">
+                <input id="inputId" type="text">
+                <button>Search by ID</button>
+            </div>
+            <div id="conteinerSearchId">
+                <input id="inputId" type="date">
+                <input type="date">
+                <button>Search by date range</button>
+            </div>
+            <div>
+                <button>View</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

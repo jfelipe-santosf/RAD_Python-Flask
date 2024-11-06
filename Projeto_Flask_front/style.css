@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to top bottom, #f0f8ff, hsl(240, 2%, 47%));
+    background: linear-gradient(to bottom, #f0f8ff, hsl(240, 2%, 47%));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,10 +7,24 @@ body{
 }
 .conteiner{
     color: white;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-color: #1F1F1F;
     border-radius: 15px;
     padding: 10px;
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+.conteinerTable{
+    padding-bottom: 10px;
+}
+#conteinerLower{
+    display: flex;
+}
+#conteinerSearchId{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+#inputId{
+    justify-content: center;
 }

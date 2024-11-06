@@ -18,11 +18,20 @@ function listatabela(){
                 let td_destination = tr.insertCell();
                 let td_missionState = tr.insertCell();
 
+                let stateMission = ""
+                if(mission.mission_state == 0){
+                    stateMission = "pendente";
+                }else if(mission.mission_state == 1){
+                    stateMission = "concluida";
+                }else{
+                    stateMission = "falida"
+                }
+
                 td_id.innerText = mission.id;
                 td_name.innerText = mission.name;
                 td_releaseDate.innerText = mission.release_date;
                 td_destination.innerText = mission.destination;
-                td_missionState.innerText = mission.mission_state;
+                td_missionState.innerText = stateMission;
             });
         })
         .catch(error => {

@@ -17,7 +17,6 @@ args.add_argument('description', type=str)
 #UPDATE MISSION
 args_update = reqparse.RequestParser()
 args_update.add_argument('id', type=int)
-args_update.add_argument("name", type=str)
 args_update.add_argument('release_date', type=str)
 args_update.add_argument('destination', type=str)
 args_update.add_argument('mission_state', type=int)
@@ -56,7 +55,7 @@ class Missions_list(Resource):
 class MissionById(Resource):   
     def get(self):
             try:
-                datas = args.parse_args()
+                datas = args_listid.parse_args()
                 mission = Missions.list_id(self, datas['id'])
                 if mission:
                     return mission
@@ -86,7 +85,7 @@ class MissionUpdate(Resource):
     def put(self):
         try:
             datas = args_update.parse_args()
-            Missions.update_mission(self, datas['id'],datas['name'], datas['date'], datas['destination'], datas['state'], datas['crew'], datas['payload'])
+            Missions.update_mission(self, datas['id'], datas['release_date'], datas['destination'], datas['mission_state'], datas['crew'], datas['payload'], datas['mission_duration'], datas['mission_cost'], datas['description'])
             return {"message": 'Product update successfully!'}, 200
         except Exception as e:
             return jsonify({'status':500,'msg':f'{e}'}), 500

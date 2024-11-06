@@ -1,0 +1,36 @@
+{
+    "id": 1,
+    "name": "starlink",
+    "release_date": "01 11 2024",
+    "destination": "moon",
+    "mission_state": 0,
+    "crew": "joao, joaozionho",
+    "payload": "mochila escolar",
+    "mission_duration": "3h",
+    "mission_cost": 3.5,
+    "description": "ah, e isso ai"
+  },
+  {
+    "id": 2,
+    "name": "awsup",
+    "release_date": "01 02 2025",
+    "destination": "moon",
+    "mission_state": 3,
+    "crew": "fernandinho beira mar",
+    "payload": "mala de viagem",
+    "mission_duration": "5h",
+    "mission_cost": 4.1,
+    "description": "ah, e isso ai"
+  },
+  {
+    "id": 3,
+    "name": "Exploração de Marte",
+    "release_date": "10 12 2024",
+    "destination": "Marte",
+    "mission_state": 1,
+    "crew": "Equipe Alpha",
+    "payload": "Equipamentos de análise de solo",
+    "mission_duration": "6 meses",
+    "mission_cost": 1000000.0,
+    "description": "Missão para explorar a superfície de Marte e coletar amostras de solo."
+  }
